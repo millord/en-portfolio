@@ -1,9 +1,9 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-const PostLink = ({ title }) => (
+const PostLink = ({ title, slug }) => (
   <li>
-    <Link href={`/post?title=${title}`}>
+    <Link as={`/${slug}`} href={`/post?title=${title}`}>
       <a>{title}</a>
     </Link>
   </li>
@@ -12,10 +12,10 @@ const PostLink = ({ title }) => (
 const Blog = () => (
   <Layout title="My Blog">
     <ul>
-      <PostLink title="React" />
-      <PostLink title="Next.js" />
-      <PostLink title="Nest.js" />
-      <PostLink title="Typescript" />
+      <PostLink slug="react-post" title="React" />
+      <PostLink slug="next-post" title="Next.js" />
+      <PostLink slug="nest-post" title="Nest.js" />
+      <PostLink slug="typescript-post" title="Typescript" />
     </ul>
   </Layout>
 );
