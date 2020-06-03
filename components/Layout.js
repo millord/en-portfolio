@@ -4,7 +4,6 @@ import Nprogress from "nprogress";
 import Router from "next/router";
 
 Router.onRouteChangeStart = (url) => {
-  console.log(url);
   Nprogress.start();
 };
 
@@ -30,7 +29,7 @@ export default ({ children, title }) => (
     </header>
     <h1>{title}</h1>
     {children}
-    <footer>&copy; {new Date().getFullYear()} Juan Millord</footer>
+    <footer>&copy; {new Date().getFullYear()} </footer>
     <style jsx>{`
       .root {
         display: flex;
